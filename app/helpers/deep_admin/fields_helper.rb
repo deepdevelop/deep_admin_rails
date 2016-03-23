@@ -1,4 +1,4 @@
-module DeepAdmin::FieldsHelper do
+module DeepAdmin::FieldsHelper
   def field_for(record, field, template=nil, &block)
     field_name = record.class.human_attribute_name(field)
     field_value = block_given? ? capture(&block) : record.send(field)
@@ -17,7 +17,5 @@ module DeepAdmin::FieldsHelper do
     end
 
     render '/deep_admin/item_field/field', locals
-
-    content_tag :div, class: 'list-group-item' do
   end
 end

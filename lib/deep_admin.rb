@@ -1,5 +1,5 @@
 require "deep_admin/version"
+require "deep_admin/engine"
 
 module DeepAdmin
-  # Your code goes here...
 end
