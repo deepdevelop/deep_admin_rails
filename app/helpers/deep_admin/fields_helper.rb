@@ -1,7 +1,8 @@
 module DeepAdmin::FieldsHelper
-  def field_for(record, field, template=nil, &block)
+  def item_field_for(record, field, options={}, &block)
     field_name = record.class.human_attribute_name(field)
     field_value = block_given? ? capture(&block) : record.send(field)
+    template = options[:template]
 
     locals = {
       record: record,
